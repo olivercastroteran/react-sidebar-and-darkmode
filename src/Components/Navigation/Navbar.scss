@@ -1,6 +1,6 @@
 .navbar {
   padding: 0.5rem;
-  border-radius: 100px;
+  border-radius: 33px;
   height: 100%;
   background-color: #2c3e50;
 
@@ -17,8 +17,31 @@
   }
 
   svg {
+    max-width: 50px;
+    margin: 0 auto;
     width: 100%;
     height: auto;
+  }
+
+  &__logo {
+    transition: all 0.3s;
+  }
+
+  &__logo.open {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      margin: 0 1rem 0 0;
+    }
+  }
+
+  &__logo.close {
+    h1 {
+      display: none;
+    }
   }
 
   &__menu {
@@ -28,6 +51,19 @@
     justify-content: space-between;
     //align-items: center;
     opacity: 0.8;
+    transition: all 0.3s;
+
+    &.close {
+      span {
+        display: none;
+      }
+    }
+
+    &.open {
+      svg {
+        margin: 0 1rem 0 6px;
+      }
+    }
   }
 
   &__link {
@@ -38,8 +74,13 @@
     transition: all 0.3s;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     border-radius: 3px;
+    transition: all 0.3s;
+
+    span {
+      font-size: 1.2rem;
+      transition: all 0.4s;
+    }
 
     svg {
       max-width: 1.5rem;
@@ -57,6 +98,10 @@
       background-color: #455d75;
       border-left: 3px solid #feb221;
 
+      span {
+        font-weight: bold;
+      }
+
       svg {
         margin-left: 3px;
       }
@@ -69,12 +114,17 @@
 
   &__toggleBtn {
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0.6rem;
     border-radius: 50%;
     width: 40px;
     height: 40px;
     opacity: 0.8;
     transition: all 0.3s;
+    transform: rotate(-180deg);
+
+    &.close {
+      transform: rotate(0deg);
+    }
 
     &:hover {
       opacity: 1;

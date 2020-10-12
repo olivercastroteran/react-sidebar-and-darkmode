@@ -14,10 +14,15 @@
 .app-container,
 .navbar-container {
   padding: 0.75rem;
+  transition: all 0.3s;
 }
 
 .navbar-container {
   width: 5%;
+
+  &.open {
+    width: 20%;
+  }
 
   @media (max-width: 1350px) {
     width: 7%;
