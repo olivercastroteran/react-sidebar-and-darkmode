@@ -1,0 +1,33 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+}
+
+.app-container,
+.navbar-container {
+  padding: 0.75rem;
+}
+
+.navbar-container {
+  width: 5%;
+
+  @media (max-width: 1350px) {
+    width: 7%;
+  }
+}
+
+.app-container {
+  width: 95%;
+
+  @media (max-width: 1350px) {
+    width: 93%;
+  }
+}
